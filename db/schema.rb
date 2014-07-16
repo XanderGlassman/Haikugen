@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140716160558) do
     t.integer  "user_id"
     t.string   "title"
     t.string   "author"
+    t.string   "path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -50,8 +51,9 @@ ActiveRecord::Schema.define(version: 20140716160558) do
 
   create_table "sentences", force: true do |t|
     t.integer  "book_id"
-    t.string   "end_word"
+    t.string   "body"
     t.string   "match_word"
+    t.string   "end_word"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
