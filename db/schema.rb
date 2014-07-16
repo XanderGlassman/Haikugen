@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140716160558) do
   end
 
   create_table "poems", force: true do |t|
-    t.string   "type"
+    t.string   "poem_type"
     t.string   "title"
     t.string   "body"
     t.integer  "user_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140716160558) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
