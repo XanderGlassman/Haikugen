@@ -3,10 +3,10 @@
 language: ruby
 
 rvm:
-  -"2.0.0"
-  -jruby-18mode
-  -jruby-19mode
-  -rbx
+  - "2.0.0"
+  - jruby-18mode
+  - jruby-19mode
+  - rbx
 
 before script:
   -psql -c 'create database travis_ci_test;' -U postgres
