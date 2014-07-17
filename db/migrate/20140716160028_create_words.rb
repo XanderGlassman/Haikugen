@@ -5,6 +5,6 @@ class CreateWords < ActiveRecord::Migration
       t.integer :syllable_count
 
       t.timestamps
+      end
     end
-  end
 end

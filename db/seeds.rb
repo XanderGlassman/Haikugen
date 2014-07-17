@@ -17,4 +17,8 @@ Like.create(user_id: nat.id, likeable_id: poem.id, likeable_type: "Poem")
 Like.create(user_id: nat.id, likeable_id: xan.id, likeable_type: "User")
 
 
-File.open("app/assets/Syllables.txt").each_line { |word| Word.create }
+File.open("app/assets/Syllables.txt").each_line do |line|
+  word = line.gsub(/=.*/, "").chomp
+  syl_count = (line.count ".") + 1
+  Word.create(body: word, syllable_count: syl_count)
+end
