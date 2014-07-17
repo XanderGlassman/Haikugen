@@ -9,4 +9,7 @@ rvm:
   - rbx
 
 before script:
+  -bundle exec rake db:create
+  -bundle exec rake db:migrate
+  -bundle exec rake db:test:prepare --trace
   -psql -c 'create database travis_ci_test;' -U postgres
