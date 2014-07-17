@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "users/log_in" => "users#log_in"
   post "users/log_in" => "users#verify"
   resources :users
+  resources :poems
+  resources :upload
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 

@@ -1,0 +1,36 @@
+<div class="container">
+  <% if session[:user_id]%>
+    <h2>Poet's pall</h2>
+    <form action="/get_sens" method="post">
+      <br>
+      <h3>Match words in</h3>
+      <input type="radio" name="search" value="end">ending only
+      <input type="radio" name="search" value="all">any part of the sentence<br><bR>
+      <h3>In...</h3>
+      <%Book.all.each do |book| %>
+        <input type="radio" name="book_id" value=<%=book.id%>><%=book.title%>
+      <%end%>
+      <br><br>
+      <input type="text" name="key[1]">
+      <input type="text" name="key[2]"><br>
+      <input type="text" name="key[3]">
+      <input type="text" name="key[4]"><br>
+      <input type="text" name="key[5]">
+      <input type="text" name="key[6]"><br>
+      <input type="submit" value="get sentences">
+    </form>
+  <br>
+  <br>
+  <br>
+
+    <h3> upload a text </h3>
+    <form method='post' action='/upload' enctype='multipart/form-data'>
+       <input type='file' name='text' multiple/>
+       <br>
+       <input type='text' placeholder="Book Title" name="title">
+       <br>
+       <input type='submit' value='Upload!'>
+    </form>
+  <%end%>
+<%= session[:user_id] if session[:user_id]%>
+
