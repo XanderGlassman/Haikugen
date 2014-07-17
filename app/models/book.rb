@@ -4,6 +4,9 @@ class Book < ActiveRecord::Base
 
   after_save :create_sens
 
+  validates :user_id, :title, presence: :true
+  validates :title, uniqueness: :true  
+
   def create_sens
     book = []
     File.open(self.path).each_line { |line| book << line }

@@ -15,6 +15,9 @@ describe Word do
 
   it { should validate_presence_of(:body) }
 
+  it { should have_many(:sen_words) }
+  it { should have_many(:sentences) } # through: :sen_words
+
   describe "#new_count" do
     it "should fill in number of syllables for words not already in words table" do
       expect(@word2.syllable_count).to eq(3)
