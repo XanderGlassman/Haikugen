@@ -30,6 +30,5 @@ describe User do
     before do
       @user = User.new(first_name: "Example User", last_name: "Example lastname", email: "user@example.com", password: "")
     end
-    it { should_not be_valid }
   end
 end
