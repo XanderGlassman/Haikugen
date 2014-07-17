@@ -2,6 +2,8 @@ class Word < ActiveRecord::Base
   has_many :sen_words
   has_many :sentences, through: :sen_words
 
+  validates :body, presence: :true
+
   after_create :new_count
 
   private

@@ -13,6 +13,8 @@ describe Word do
   it { should respond_to(:syllable_count) }
   it { should be_valid }
 
+  it { should validate_presence_of(:body) }
+
   describe "#new_count" do
     it "should fill in number of syllables for words not already in words table" do
       expect(@word2.syllable_count).to eq(3)
