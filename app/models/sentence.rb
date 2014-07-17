@@ -3,6 +3,8 @@ class Sentence < ActiveRecord::Base
   has_many :sen_words
   has_many :words, through: :sen_words
 
+  validates :book_id, presence: :true
+
   before_save :set_end_word
 
 
