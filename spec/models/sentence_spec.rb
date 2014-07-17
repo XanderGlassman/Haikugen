@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Sentence do
   before do
-    @sentence = Sentence.new(book_id: Book.create(), body: "The quick brown fox jumps over the lazy dog")
+    @sentence = Sentence.new(book_id: Book.create(path: "public/text/Test.txt"), body: "The quick brown fox jumps over the lazy dog")
   end
 
   subject { @sentence }
