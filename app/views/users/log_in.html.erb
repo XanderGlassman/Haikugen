@@ -1,0 +1,18 @@
+
+<%= form_for :user, url: "log_in" do |f| %>
+
+  <p>
+    <%= f.label :email %> <br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %> <br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
