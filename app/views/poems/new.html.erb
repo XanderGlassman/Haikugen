@@ -1,6 +1,6 @@
 <div class="container">
   <% if session[:user_id]%>
-    <h2>Poet's pall</h2>
+    <h2>POGEN</h2>
     <form action="/get_sens" method="post">
       <br>
       <h3>Match words in</h3>
@@ -22,6 +22,13 @@
   <br>
   <br>
   <br>
+    <form method="Post" action="/poems/haiku">
+      <%Book.all.each do |book| %>
+        <input type="radio" name="book_id" value=<%=book.id%>><%=book.title%>
+      <%end%>
+      <input type="text" name="haiku_key" />
+      <input type="submit" value="Create!" />
+    </form>
 
     <h3> upload a text </h3>
     <form method='post' action='/upload' enctype='multipart/form-data'>

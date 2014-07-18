@@ -22,6 +22,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'coveralls', require: false
+
+gem 'carrierwave'
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
@@ -48,4 +50,6 @@ group :development, :test do
  gem 'database_cleaner', '~> 1.2.0'
  gem 'shoulda-matchers'
 end
+
+
 

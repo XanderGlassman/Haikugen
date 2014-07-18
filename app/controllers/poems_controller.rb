@@ -6,6 +6,10 @@ class PoemsController < ApplicationController
   # def show
   #   @user = User.find(params[:id])
   # end
+  def haiku
+    Sentence.where(book_id: params[:book_id])
+
+  end
 
 private
   # def user_params

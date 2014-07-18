@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get "users/log_in" => "users#log_in"
   post "users/log_in" => "users#verify"
+  post "poems/haiku" => "poems#haiku"
   resources :users
   resources :poems
   resources :upload
