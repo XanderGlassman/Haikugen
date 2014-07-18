@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "users/log_in" => "users#log_in"
   post "users/log_in" => "users#verify"
   post "poems/haiku" => "poems#haiku"
+  # get "poems/:id" => "poems#show"
   resources :users
   resources :poems
   resources :upload

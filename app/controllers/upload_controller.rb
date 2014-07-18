@@ -1,6 +1,6 @@
 class UploadController < ApplicationController
   def create
-      content_type :text
+  content_type :text
   path = "public/text/" + params[:text][:filename]
   File.open(path, "wb") do |f|
     f.write(params[:text][:tempfile].read)
