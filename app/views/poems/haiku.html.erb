@@ -1,6 +1,6 @@
 THIS IS A NEW HAIKU:<br>
 
-<% @poem.lines.each do |line| %>
+<% @poem.lines.each_with_index do |line, i| %>
   <%= line.body %><br>
 <% end %>
 
