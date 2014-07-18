@@ -21,14 +21,11 @@ describe User do
   it { should validate_presence_of(:last_name) }
   it { should validate_presence_of(:email) }
 
+
   it { should have_many(:favorites) } # class_name: "Like"
   it { should have_many(:likes) } # as :likeable
   it { should have_many(:books) }
   it { should have_many(:poems) }
 
-  describe "when password is not present" do
-    before do
-      @user = User.new(first_name: "Example User", last_name: "Example lastname", email: "user@example.com", password: "")
-    end
-  end
+
 end
