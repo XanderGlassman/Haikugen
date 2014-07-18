@@ -1,6 +1,6 @@
 Pogen
 =====
-
+[![Coverage Status](https://coveralls.io/repos/XanderGlassman/pogen/badge.png)](https://coveralls.io/r/XanderGlassman/pogen)
 ### What is Pogen?
 
 Pogen is a poem generation web application based on user inputs. The user is able to uplaod books to the database and as a result, generate Sestina and Haiku sytle poetry compiled by the Pogen application logic, using words from the uploaded literary works. 
