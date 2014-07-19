@@ -1,0 +1,9 @@
+<% @poem.each do |poem| %>
+  <br>
+  <h3><%= poem.title %></h3>
+  <h4> by <%= poem.user.first_name %> </h4>
+  <br>
+  <% poem.lines.each_with_index do |line, i| %>
+    <p><%= line.body %></p><br>
+  <% end %>
+<%end%>

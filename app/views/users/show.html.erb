@@ -1,2 +1,13 @@
-<h2>welcome, <%= @user.first_name %> to Pogen v3002.1</h2>
-<a href="/poems/new">  Create a Poem! </a>
+<h2>welcome, <%= @user.first_name %> to HaikuGen v3002.1</h2>
+<a href="/poems/new">  Create a Poem! </a><br>
+<a href= "/poems"> Browse some poems! </a>
+<br>
+  <h3> Poems I like </h3>
+    <% @liked_poems.each do |like| %>
+      <h3><%= Poem.find(like.likeable_id).title %></h3>
+      <h4>by <%= Poem.find(like.likeable_id).user.first_name %></h4>
+      <% Poem.find(like.likeable_id).lines.each do |line|%>
+        <p><%= line.body %></p><br>
+      <% end %>
+    <% end %>
+

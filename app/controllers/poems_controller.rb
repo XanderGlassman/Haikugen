@@ -6,6 +6,11 @@ class PoemsController < ApplicationController
   # def show
   #   @user = User.find(params[:id])
   # end
+
+  def index
+    @poem= Poem.all
+  end
+
   def haiku
     create_match_sens
     @poem = Poem.create(poem_type: "Haiku", title: params[:haiku_key], user_id: session[:user_id])
