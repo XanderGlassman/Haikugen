@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'coveralls', require: false
 
-gem 'carrierwave'
+gem "paperclip", "~> 4.1"
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
