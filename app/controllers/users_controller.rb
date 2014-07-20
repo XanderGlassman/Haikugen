@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @liked_poems = @user.favorites.where(likeable_type: "poem")
+    @liked_poems = @user.favorites.where(likeable_type: "Poem")
   end
 
 

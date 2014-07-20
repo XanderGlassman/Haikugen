@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ .poem_title {
+  position: relative;
+  top: 20px;
+}
+
+h3 {
+  display: inline;
+}
+
+
+body {
+  color: green;
+}
+

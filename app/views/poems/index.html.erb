@@ -1,6 +1,9 @@
 <% @poem.each do |poem| %>
   <br>
-  <h3><%= poem.title %></h3>
+  <div class="poem_title">
+    <img class="vote" src="http://files.dogster.com/images/wcdcs09/vote/button_categorypg_vote.gif" id="<%=poem.id%>"/>
+    <h3><%= poem.title %></h3>
+  </div>
   <h4> by <%= poem.user.first_name %> </h4>
   <br>
   <% poem.lines.each_with_index do |line, i| %>

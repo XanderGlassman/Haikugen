@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+    $(".vote").click(function(event) {
+        var that = $(this);
+        console.log(that);
+        console.log("that is above");
+        event.preventDefault();
+        console.log("click on button talks to js");
+        var url = "poems/vote/" + $(this).attr("id");
+        $.ajax({
+            url: url,
+            type: "POST",
+            success: function(result) {
+                console.log("works");
+                console.log(result);
+                console.log(url);
+                $(that).css("display", "none");
+                that.siblings("p").children(".points").text(result);
+            }
+        });
+    });
+});

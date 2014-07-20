@@ -24,6 +24,7 @@ class UploadController < ApplicationController
       # p f.path
     end
     create_book
+    redirect_to "/users/#{session[:user_id]}"
   end
 
   private

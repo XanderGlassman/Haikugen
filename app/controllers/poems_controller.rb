@@ -20,8 +20,12 @@ class PoemsController < ApplicationController
         create_line(7) if i == 0
       end
     else
-      p params[:haiku_key] + " doesn't exist in the book"
+      redirect_to "/poems/new"
     end
+  end
+
+  def vote
+    Like.create(user_id: session[:user_id], likeable_id: params[:id], likeable_type: "Poem")
   end
 
 
