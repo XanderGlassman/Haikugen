@@ -1,13 +1,27 @@
-<h2>welcome, <%= @user.first_name %> to HaikuGen v3002.1</h2>
-<a href="/poems/new">  Create a Poem! </a><br>
-<a href= "/poems"> Browse some poems! </a>
-<br>
-  <h3> Poems I like </h3><br><br>
-    <% @liked_poems.each do |like| %>
-      <h3><%= Poem.find(like.likeable_id).title %></h3>
-      <h4>by <%= Poem.find(like.likeable_id).user.first_name %></h4>
-      <% Poem.find(like.likeable_id).lines.each do |line|%>
-        <p><%= line.body %></p><br>
-      <% end %>
+<% if session[:user_id].to_i == params[:id].to_i %>
+  <h2>welcome, <%= @user.first_name %> to HaikuGen v3002.1</h2>
+  <a href="/poems/new">  Create a Poem! </a><br>
+  <a href= "/poems"> Browse some poems! </a>
+  <br>
+    <h3>Poets I like</h3><br>
+    <% @liked_users.each do |like| %>
+    <a href="/users/<%= Like.find(like.likeable_id).user.id %>"><%= Like.find(like.likeable_id).user.first_name %></a><br>
     <% end %>
-
+    <h3> Poems I like </h3><br><br>
+      <% @liked_poems.each do |like| %>
+        <h3><%= Poem.find(like.likeable_id).title %></h3>
+        <h4>by <%= Poem.find(like.likeable_id).user.first_name %></h4>
+        <% Poem.find(like.likeable_id).lines.each do |line|%>
+          <p><%= line.body %></p><br>
+        <% end %>
+      <% end %>
+<% else %>
+  <h3>Poems by <%= User.find(params[:id]).first_name %> <%= User.find(params[:id]).last_name %>:</h3><br>
+  <a href="/users/vote/<%= params[:id] %>">I like this poet</a>
+  <% Poem.where(user_id: params[:id]).each do |poem| %>
+  <h4><%= poem.title %></h4>
+    <% poem.lines.each do |line| %>
+    <%= line.body %> <br>
+    <% end %><br>
+  <% end %>
+<% end %>
