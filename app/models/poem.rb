@@ -4,4 +4,6 @@ class Poem < ActiveRecord::Base
   has_many :lines
 
   validates :poem_type, :title, :user_id, presence: :true
+
+
 end

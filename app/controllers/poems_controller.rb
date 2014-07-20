@@ -26,7 +26,10 @@ class PoemsController < ApplicationController
 
   def vote
     Like.create(user_id: session[:user_id], likeable_id: params[:id], likeable_type: "Poem")
+    Poem.find(params[:id]).likes.count
   end
+
+
 
 
 private
