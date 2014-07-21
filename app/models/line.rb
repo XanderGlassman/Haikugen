@@ -8,7 +8,7 @@ class Line < ActiveRecord::Base
     if self.body == nil || self.body == " "
       0
     else
-      (self.body.split(" ").map{|word| Word.find_or_create_by(body: word).syllable_count}.inject(:+))
+      (self.body.split(" ").map{|word| Word.find_or_create_by(body: word).syllable_count}.inject(:+))-1
     end
   end
 
