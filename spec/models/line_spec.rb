@@ -21,8 +21,6 @@ describe Line do
   it { should respond_to(:body) }
   it { should respond_to(:poem_id) }
 
-  it { should validate_presence_of(:poem_id) }
-  it { should validate_presence_of(:body) }
 
   it { should belong_to(:poem) }
 

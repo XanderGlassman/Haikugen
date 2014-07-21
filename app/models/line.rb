@@ -5,7 +5,7 @@ class Line < ActiveRecord::Base
   before_save :downcase
 
   def syllable_count
-    if self.body == nil || self.body == " "
+    if self.body == nil || self.body == " " || self.body == ""
       0
     else
       (self.body.split(" ").map{|word| Word.find_or_create_by(body: word).syllable_count}.inject(:+))
