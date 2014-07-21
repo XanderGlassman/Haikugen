@@ -41,14 +41,23 @@ private
   end
 
   def create_line(desired_syllable_count)
+    @dsc = desired_syllable_count
     until @line.syllable_count == desired_syllable_count
       shuffle
       sample_word
       Word.find_or_create_by(body: @sample)
       @line.body = @line.body + " " + @sample
-     too_many_syllables?(desired_syllable_count)
+      too_many_syllables?(@dsc)
     end
+    exclude_double_words
     @poem.lines << @line
+  end
+
+  def exclude_double_words
+    if @line.body.split(" ").uniq.length !=  @line.body.split(" ").length
+      @line.body = ""
+      create_line(@dsc)
+    end
   end
 
   def create_middle_line
@@ -68,6 +77,7 @@ private
 
   def sample_word
     @sample = @match_sens.sample.body.split(" ").sample.gsub(/[^a-z -'']/i, '')
+    exclude_double_words
   end
 
 end
