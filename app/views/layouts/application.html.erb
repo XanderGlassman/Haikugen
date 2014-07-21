@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pogen</title>
+  <title>HaikuGen --A Haiku Generator</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="/pogen/app/assets/stylesheets/normalize.css">
-  <link rel="stylesheet" href="/stylesheets/application.css">
+  <link rel="stylesheet" href="/pogen/app/assets/stylesheets/application.css">
+  <link rel="stylesheet" href="/pogen/app/assets/stylesheets/layout.css">
+  <link rel="stylesheet" href="pogen/app/assets/stylesheets/users.css.scss">
+  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
+<div class="header"><h1>HaikuGen</h1>
+<h3>A Haiku Generator</h3>
+<hr>
+</div>
 
 <%= yield %>
 
