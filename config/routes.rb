@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   post "poems/vote/:id" => "poems#vote"
+  get "users/vote/:id" => "users#vote"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
