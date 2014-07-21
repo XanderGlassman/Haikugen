@@ -40,6 +40,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 gem 'travis', '~>  1.6.14'
 
+gem 'byebug'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

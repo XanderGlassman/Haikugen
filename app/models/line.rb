@@ -1,11 +1,15 @@
 class Line < ActiveRecord::Base
   belongs_to :poem
-  validates :body, :poem_id, presence: :true
+  # validates :body, presence: :true
 
   before_save :downcase
 
   def syllable_count
-    (self.body.split(" ").map{|word| Word.find_or_create_by(body: word).syllable_count}.inject(:+)) if self.body != ""
+    if self.body == nil || self.body == " "
+      0
+    else
+      (self.body.split(" ").map{|word| Word.find_or_create_by(body: word).syllable_count}.inject(:+))
+    end
   end
 
   def downcase

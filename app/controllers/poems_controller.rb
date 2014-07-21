@@ -42,10 +42,11 @@ private
 
   def create_line(desired_syllable_count)
     until @line.syllable_count == desired_syllable_count
-      @line.body = @line.body.split(" ").shuffle.join(" ")
-      Word.find_or_create_by(body: sample_word)
-      @line.body = @line.body + " " + sample_word
-      too_many_syllables?(desired_syllable_count)
+      shuffle
+      sample_word
+      # Word.find_or_create_by(body: @sample)
+      @line.body = @line.body + " " + @sample
+     too_many_syllables?(desired_syllable_count)
     end
     @poem.lines << @line
   end
@@ -55,15 +56,18 @@ private
     create_line(7)
   end
 
+  def shuffle
+    @line.body = @line.body.split(" ").shuffle.join(" ")
+  end
 
   def too_many_syllables?(desired_syllable_count)
-    if @line.syllable_count > desired_syllable_count
-      @line.body = @line.body[/(.*)\s/,1]
-    end
+      if @line.syllable_count > desired_syllable_count
+        @line.body = @line.body[/(.*)\s/,1]
+      end
   end
 
   def sample_word
-    @match_sens.sample.body.split(" ").sample.gsub(/[^a-z -'']/i, '')
+    @sample = @match_sens.sample.body.split(" ").sample.gsub(/[^a-z -'']/i, '')
   end
 
 end
