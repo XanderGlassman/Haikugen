@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(document).ready(function() {
     $(".vote").click(function(event) {
         var that = $(this);
@@ -23,16 +22,21 @@ $(document).ready(function() {
         console.log("that is above");
         event.preventDefault();
         console.log("click on button talks to js");
+        var count = parseInt($(this).attr("foo")) + 1;
+
         var url = "poems/vote/" + $(this).attr("id");
         $.ajax({
             url: url,
             type: "POST",
             success: function(result) {
+                console.log("The count is " + count)
                 console.log("works");
                 console.log(result);
                 console.log(url);
                 $(that).css("display", "none");
-                that.siblings("p").children(".points").text(result);
+                $(that).append(count);
+                $(that).next().text(count)
+                $("." + $(that).attr("id")).text(count);
             }
         });
     });
