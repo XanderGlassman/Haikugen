@@ -42,6 +42,9 @@ gem 'travis', '~>  1.6.14'
 
 gem 'byebug'
 
+gem 'bourbon'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

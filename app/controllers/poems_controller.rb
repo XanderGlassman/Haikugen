@@ -44,7 +44,7 @@ private
     until @line.syllable_count == desired_syllable_count
       shuffle
       sample_word
-      # Word.find_or_create_by(body: @sample)
+      Word.find_or_create_by(body: @sample)
       @line.body = @line.body + " " + @sample
      too_many_syllables?(desired_syllable_count)
     end
