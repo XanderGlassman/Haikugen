@@ -14,6 +14,11 @@ h1 {
   color: #8FBC8F;
 }
 
+h2 {
+  text-align: center;
+  position: relative;
+}
+
 h3 {
   text-align: center;
   position: relative;
@@ -31,7 +36,7 @@ hr{
 button {
   display: block;
   height: 100px;
-  width: 300px;
+  width: 30%;
   border: 1px solid;
   border-radius: 50px;
   background: #34696f;
@@ -45,12 +50,56 @@ button {
   color: #8FBC8F;
   font: 20px bold 'Raleway' sans-serif;
   position: relative;
-  left: 440px;
+  left: 414px;
   top: 50px;
 }
 
 a:link {
   text-decoration: none;
+}
+
+#show_page_button_1 {
+  display: block;
+  height: 30px;
+  padding-top: 10px;
+  width: 20%;
+  border: 1px solid;
+  border-radius: 50px;
+  background: #34696f;
+  text-align: center;
+  margin-left: 10% ;
+  background: -webkit-linear-gradient(top, #34696f, #2f5f63);
+  background: -moz-linear-gradient(top, #34696f, #2f5f63);
+  background: -o-linear-gradient(top, #34696f, #2f5f63);
+  background: -ms-linear-gradient(top, #34696f, #2f5f63);
+  background: linear-gradient(top, #34696f, #2f5f63);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+  color: #8FBC8F;
+  font: 20px bold 'Raleway' sans-serif;
+  position: relative;
+  right: 9%;
+}
+
+#show_page_button_2 {
+  display: block;
+  height: 25px;
+  padding-top: 9px;
+  width: 20%;
+  border: 1px solid;
+  border-radius: 50px;
+  background: #34696f;
+  text-align: center;
+  margin-left: 10%;  
+  background: -webkit-linear-gradient(top, #34696f, #2f5f63);
+  background: -moz-linear-gradient(top, #34696f, #2f5f63);
+  background: -o-linear-gradient(top, #34696f, #2f5f63);
+  background: -ms-linear-gradient(top, #34696f, #2f5f63);
+  background: linear-gradient(top, #34696f, #2f5f63);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+  color: #8FBC8F;
+  font: 20px bold 'Raleway' sans-serif;
+  position: relative;
+  right: 9%;
 }
 
 

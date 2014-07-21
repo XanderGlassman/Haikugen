@@ -1,7 +1,12 @@
 <% if session[:user_id].to_i == params[:id].to_i %>
   <h2>welcome, <%= @user.first_name %> to HaikuGen v3002.1</h2>
-  <a href="/poems/new">  Create a Poem! </a><br>
-  <a href= "/poems"> Browse some poems! </a>
+  <div id="show_page_button_1">
+  <a href="/poems/new">  Create a Poem! </a>
+  </div>
+  <br>
+  <div id="show_page_button_2">
+    <a href= "/poems"> Browse some poems! </a>
+  </div>
   <br>
     <h3>Poets I like</h3><br>
     <% @liked_users.each do |like| %>

@@ -1,6 +1,5 @@
 <div class="container">
   <% if session[:user_id]%>
-    <h2>POGEN</h2>
     <form method="Post" action="/poems/haiku">
       <%Book.all.each do |book| %>
         <input type="radio" name="book_id" value=<%=book.id%>/><%=book.title%>
