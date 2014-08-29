@@ -1,24 +1,25 @@
 <% if session[:user_id].to_i == params[:id].to_i %>
-  <h2>welcome, <%= @user.first_name %> to HaikuGen v3002.1</h2>
-  <div id="show_page_button_1">
-  <a href="/poems/new">  Create a Poem! </a>
-  </div>
-  <br>
-  <div id="show_page_button_2">
-    <a href= "/poems"> Browse some poems! </a>
-  </div>
-  <br>
+  <h2><%= @user.first_name %>, welcome to HaikuGen!</h2>
+
+
+    <% unless @liked_users.empty? %>
     <h3>Poets I like</h3><br>
     <% @liked_users.each do |like| %>
     <a href="/users/<%= Like.find(like.likeable_id).user.id %>"><%= Like.find(like.likeable_id).user.first_name %></a><br>
     <% end %>
+    <% end %>
+    <% unless @liked_poems.empty? %>
     <h3> Poems I like </h3><br><br>
+    <% end %>
       <% @liked_poems.each do |like| %>
+      <div class="liked_poem">
         <h3><%= Poem.find(like.likeable_id).title %></h3>
         <h4>by <%= Poem.find(like.likeable_id).user.first_name %></h4>
         <% Poem.find(like.likeable_id).lines.each do |line|%>
-          <p><%= line.body %></p><br>
+          <p><%= line.body %></p>
         <% end %>
+    </div>
+    <br>
       <% end %>
 <% else %>
   <h3>Poems by <%= User.find(params[:id]).first_name %> <%= User.find(params[:id]).last_name %>:</h3><br>

@@ -1,14 +1,16 @@
 <% @poem.each do |poem| %>
   <br>
+  <div class="liked_poem">
   <div class="poem_title">
 
     <img class="vote" src="http://files.dogster.com/images/wcdcs09/vote/button_categorypg_vote.gif" id="<%=poem.id%>" foo="<%=poem.likes.count%>"/>
-      <h3><span class="vote_count" poem="<%=poem.id%>"><%= poem.likes.count %></span> </h3>
-      <h3>votes <%= poem.title %></h3>
+      <h3><span class="vote_count" poem="<%=poem.id%>"></span> </h3>
+      <h3>votes <%= poem.likes.count %><br><br><%= poem.title %></h3>
   </div>
   <h4> by <%= poem.user.first_name %></h4>
-  <br>
+  
   <% poem.lines.each_with_index do |line, i| %>
-    <p><%= line.body %></p><br>
+    <p><%= line.body %></p>
   <% end %>
+</div>
 <%end%>

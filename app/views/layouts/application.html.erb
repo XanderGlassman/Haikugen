@@ -17,9 +17,20 @@
 <div class="header"><h1>HaikuGen</h1>
 <h3>A Haiku Generator</h3>
 <hr>
+<button>
+  <a href="/poems/new">  Create a Poem! </a>
+</button>
+<button>
+    <a href= "/poems"> Browse poems! </a>
+</button>
 </div>
 
-<%= yield %>
-
+<img src="/assets/great_wave.jpg" class="great_wave">
+<div class="container">
+  <%= yield %>
+</div>
+<div class="copyright">
+  <br><br>Copyright 2014&copy;
+</div>
 </body>
 </html>

@@ -1,14 +1,18 @@
 <div class="container">
   <% if session[:user_id]%>
+    <div class="liked_poem">
     <form method="Post" action="/poems/haiku">
       <%Book.all.each do |book| %>
         <input type="radio" name="book_id" value=<%=book.id%>/><%=book.title%>
         <input name="authenticity_token" type="hidden" value= "token_value" />
+        <br>
       <%end%>
       <input type="text" name="haiku_key" />
       <input type="submit" value="Create!" />
     </form>
+  </div>
 
+    <div class="liked_poem">
     <h3> upload a text </h3>
       <%= form_tag '/upload', :multipart => true do %>
         <label for="file">Upload text File</label> <%= file_field_tag "file" %>
@@ -19,5 +23,5 @@
         <%= submit_tag %>
       <% end %>
     <%end%>
-<%= session[:user_id] if session[:user_id]%>
+  </div>
 
